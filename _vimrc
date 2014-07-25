@@ -1,6 +1,6 @@
 set nocompatible "This fixes the problem where arrow keys do not function properly on some systems.
 syntax on  "Enables syntax highlighting for programming languages
-:set guifont=Lucida_Console:h14:cDEFAULT
+set guifont=Consolas:h14:cDEFAULT
 set mouse=a  "Allows you to click around the text editor with your mouse to move the cursor
 set showmatch "Highlights matching brackets in programming languages
 set autoindent  "If you're indented, new lines will also be indented
@@ -10,7 +10,11 @@ set tabstop=4  "How much space Vim gives to a tab
 set number  "Enables line numbering
 set smarttab  "Improves tabbing
 set shiftwidth=4  "Assists code formatting
-colorscheme wombat256mod  "Changes the color scheme. Change this to your liking. Lookin /usr/share/vim/vim61/colors/ for options.
+set hlsearch  "Set search Highlights
+let perl_extended_vars = 1 " syntax color complex things like @{${"foo"}}
+filetype plugin on "turn perl plugin on
+set background=dark
+colorscheme molokai  "Changes the color scheme. Change this to your liking. Lookin /usr/share/vim/vim61/colors/ for options.
 "setlocal spell  "Enables spell checking (CURRENTLY DISABLED because it's kinda annoying). Make sure to uncomment the next line if you use this.
 "set spellfile=~/.vimwords.add  "The location of the spellcheck dictionary. Uncomment this line if you uncomment the previous line.
 set foldmethod=manual  "Lets you hide sections of code
@@ -20,6 +24,11 @@ imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 "--- Ends navigation commands
+"--- For saving documents
+nmap <c-s> :w<CR>
+vmap <c-s> <Esc><c-s>gv
+imap <c-s> <Esc><c-s>
+"--- Ends saving documents
 "--- The following adds a sweet menu, press F4 to use it.
 source $VIMRUNTIME/menu.vim
 set wildmenu
@@ -27,3 +36,8 @@ set cpo-=<
 set wcm=<C-Z>
 map <F4> :emenu <C-Z>
 "--- End sweet menu
+call pathogen#infect()
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_enable_perl_checker = 1
+let g:molokai_original = 0
