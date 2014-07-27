@@ -20,7 +20,6 @@ set background=dark
 colorscheme molokai "Changes the color scheme. Change this to your liking. Lookin /usr/share/vim/vim61/colors/ for options.
 "setlocal spell  	"Enables spell checking (CURRENTLY DISABLED because it's kinda annoying). Make sure to uncomment the next line if you use this.
 "set spellfile=~/.vimwords.add  "The location of the spellcheck dictionary. Uncomment this line if you uncomment the previous line.
-set foldmethod=manual  "Lets you hide sections of code
 "--- The following commands make the navigation keys work like standard editors
 imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
@@ -49,8 +48,9 @@ set colorcolumn=110
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
 "folding settings
-set foldmethod=indent   "fold based on indent
+set foldmethod=syntax 	"Lets you hide sections of code
 set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
+"set nofoldenable        "dont fold by default
+set foldlevel=1   	    "this is just what i use
+set foldclose=all
 set omnifunc=syntaxcomplete#Complete
