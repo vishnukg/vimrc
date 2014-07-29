@@ -17,7 +17,7 @@ set hlsearch  		"Set search Highlights
 let perl_extended_vars = 1 "syntax color complex things like @{${"foo"}}
 filetype plugin on 	"turn perl plugin on
 set background=dark
-colorscheme molokai "Changes the color scheme. Change this to your liking. Lookin /usr/share/vim/vim61/colors/ for options.
+colorscheme gruvbox "colorscheme molokai Changes the color scheme. Change this to your liking. Lookin /usr/share/vim/vim61/colors/ for options.
 "setlocal spell  	"Enables spell checking (CURRENTLY DISABLED because it's kinda annoying). Make sure to uncomment the next line if you use this.
 "set spellfile=~/.vimwords.add  "The location of the spellcheck dictionary. Uncomment this line if you uncomment the previous line.
 "--- The following commands make the navigation keys work like standard editors
@@ -54,3 +54,19 @@ set foldnestmax=10      "deepest fold is 10 levels
 set foldlevel=1   	    "this is just what i use
 set foldclose=all
 set omnifunc=syntaxcomplete#Complete
+" Disabling normal arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+" Better copy & paste
+" When you want to paste large blocks of code into vim, press F2 before you
+" paste. At the bottom you should see ``-- INSERT (paste) --``.
+
+set pastetoggle=<F2>
+set clipboard=unnamed
+"
+"ino jk <esc>
+"ino jk <esc>
