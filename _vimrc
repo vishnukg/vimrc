@@ -14,8 +14,6 @@ set shiftwidth=4  	"Assists code formatting
 set wrap
 set textwidth=80    "For wrapping text
 set hlsearch  		"Set search Highlights
-let perl_extended_vars = 1 "syntax color complex things like @{${"foo"}}
-filetype plugin on 	"turn perl plugin on
 set background=dark
 colorscheme gruvbox "colorscheme molokai Changes the color scheme. Change this to your liking. Lookin /usr/share/vim/vim61/colors/ for options.
 "setlocal spell  	"Enables spell checking (CURRENTLY DISABLED because it's kinda annoying). Make sure to uncomment the next line if you use this.
@@ -38,12 +36,6 @@ set cpo-=<
 set wcm=<C-Z>
 map <F4> :emenu <C-Z>
 "--- End sweet menu
-"call pathogen#infect()
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_enable_perl_checker = 1
-let g:molokai_original = 0
-set noeb vb t_vb= 	"Remember that this line has been put into _gvimrc file
 set colorcolumn=110
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
@@ -61,12 +53,3 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
-" Better copy & paste
-" When you want to paste large blocks of code into vim, press F2 before you
-" paste. At the bottom you should see ``-- INSERT (paste) --``.
-
-set pastetoggle=<F2>
-set clipboard=unnamed
-"
-"ino jk <esc>
-"ino jk <esc>
